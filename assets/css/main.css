@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'QuickSand';
+    src: url('../fonts/QuickSand/Quicksand-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'QuickSandBold';
+    src: url('../fonts/QuickSand/Quicksand-Bold.ttf');
+}
+
+.font-quicksand-regular {
+    font-family: 'QuickSand';
+}
+
+.font-quicksand-bold{
+    font-family: 'QuickSandBold';
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,10 +38,10 @@ Navegadores basados en CRHOME
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D2B48C;
+    background: #6B4F3B;
     border-radius: 25px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #b49972;
+    background: #A97142;
 }

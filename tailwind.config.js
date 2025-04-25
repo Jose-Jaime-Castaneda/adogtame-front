@@ -7,7 +7,11 @@ module.exports = {
     extend: {
       backgroundColor: {
         mainColor: "#D2B48C",
-        mainBackGround: "#f7f7f7",
+        mainBackGround: "#f5f5f5",
+        ctaButtons: "#6B4F3B",
+        ctaButtonsHover: "#A97142",
+        cardMainColor: "#FFF1E6",
+        // El gris que se usa aveces es el gray-700 de Tailwind
       },
     },
   },
