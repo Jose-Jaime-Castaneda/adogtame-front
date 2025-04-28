@@ -5,15 +5,17 @@
     <nav class="flex items-center justify-between">
       <NuxtLink
         to="/"
-        class="flex gap-5 items-center border-b-8 border-b-gray-700 rounded-lg"
+        class="flex gap-2 md:gap-5 items-center border-b-8 border-b-gray-700 rounded-lg"
       >
-        <p class="uppercase text-3xl font-quicksand-bold tracking-regular">
+        <p
+          class="uppercase text-xl md:text-3xl font-quicksand-bold tracking-regular"
+        >
           Adogtame
         </p>
         <img
           src="@/assets/icons/perro_sentado.svg"
           alt="Perro Sentado"
-          class="h-16"
+          class="h-10 md:h-16"
         />
       </NuxtLink>
 

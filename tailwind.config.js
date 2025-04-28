@@ -13,6 +13,9 @@ module.exports = {
         cardMainColor: "#FFF1E6",
         // El gris que se usa aveces es el gray-700 de Tailwind
       },
+      textColor: {
+        mainBrown: "#D2B48C",
+      },
     },
   },
   plugins: [],
