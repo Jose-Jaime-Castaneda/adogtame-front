@@ -15,61 +15,62 @@
       <div
         class="w-full md:w-1/2 rounded-r-lg flex justify-center items-center"
       >
-        <form
-          @submit.prevent="handleLogin"
-          class="flex flex-col gap-5 bg-cardMainColor rounded-lg p-4 w-full md:w-5/6 md:my-10"
-        >
-          <p class="text-center text-2xl px-3 my-5">
-            Inicia sesión para adoptar a tu siguiente
-            <span class="text-mainBrown font-bold uppercase">mejor amigo</span>
-          </p>
-
-          <InputForm
-            :id="'email'"
-            :label="'Correo'"
-            :type="'email'"
-            :placeholder="'Correo electronico'"
-            :required="true"
-            v-model="email"
+        <Transition name="rotate" mode="out-in">
+          <component
+            :is="isLogin ? Login : SignUp"
+            @change-form="(value) => (isLogin = value)"
+            :key="isLogin"
           />
-          <InputForm
-            :id="'password'"
-            :label="'Contraseña'"
-            :type="'password'"
-            :placeholder="'Contraseña'"
-            :required="true"
-            v-model="password"
-          />
-
-          <p class="text-center text-lg my-5">
-            ¿No tienes una cuenta?
-            <span class="text-mainBrown font-bold">Crea una</span>
-          </p>
-
-          <input
-            type="submit"
-            value="Iniciar Sesión"
-            class="bg-ctaButtons hover:bg-ctaButtonsHover rounded-lg font-quicksand-regular font-semibold text-white px-4 py-2 uppercase"
-          />
-        </form>
+        </Transition>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import InputForm from "~/components/forms/InputForm.vue";
+import Login from "~/components/forms/Login.vue";
+import SignUp from "~/components/forms/SignUp.vue";
 
 definePageMeta({
   layout: "none",
 });
 
-const email = ref("");
-const password = ref("");
-
-const handleLogin = async () => {
-  console.log("Correo: " + email.value + " Contraseña: " + password.value);
-};
+const isLogin = ref(true);
 </script>
 
-<style scoped></style>
+<style scoped>
+/* .fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-slide-enter-to,
+.fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+.rotate-enter-active,
+.rotate-leave-active {
+  transition: transform 0.4s, opacity 0.4s;
+  transform-style: preserve-3d;
+}
+
+.rotate-enter-from,
+.rotate-leave-to {
+  opacity: 0;
+  transform: rotateY(90deg);
+}
+
+.rotate-enter-to,
+.rotate-leave-from {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+</style>
